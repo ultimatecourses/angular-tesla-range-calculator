@@ -1,7 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-export const RADIO_CONTROL_ACCESSOR = {
+const RADIO_CONTROL_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => TeslaWheelsComponent),
   multi: true

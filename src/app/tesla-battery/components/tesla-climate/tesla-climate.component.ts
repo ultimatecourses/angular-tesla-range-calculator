@@ -1,7 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy, forwardRef } from '@angular/core';
 import { FormControl, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-export const CHECKBOX_VALUE_ACCESSOR = {
+const CHECKBOX_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => TeslaClimateComponent),
   multi: true
