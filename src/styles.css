@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'RobotoNormal';
+  src: url('./assets/fonts/Roboto-Regular-webfont.eot');
+  src: url('./assets/fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('./assets/fonts/Roboto-Regular-webfont.woff') format('woff'),
+       url('./assets/fonts/Roboto-Regular-webfont.ttf') format('truetype'),
+       url('./assets/fonts/Roboto-Regular-webfont.svg#RobotoRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: 300 14px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cf:before,
+.cf:after {
+    content: '';
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+  *zoom: 1;
+}
