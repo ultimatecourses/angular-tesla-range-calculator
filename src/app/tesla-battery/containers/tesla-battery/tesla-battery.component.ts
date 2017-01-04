@@ -14,7 +14,7 @@ import { BatteryService } from '../../tesla-battery.service';
       <div class="tesla-controls cf" formGroupName="config">
         <tesla-counter
           title="Speed"
-          unit="mh"
+          unit="mph"
           [step]="5"
           [min]="45"
           [max]="70"
