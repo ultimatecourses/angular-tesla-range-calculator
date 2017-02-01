@@ -1,3 +1,12 @@
+@mixin prefix($property, $value) {
+  $prefixes: (webkit moz ms o);
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
 .tesla-car {
   width: 100%;
   min-height: 350px;
@@ -25,51 +34,73 @@
     right: 72px;
   }
   &--19 {
-    background-image: url(assets/wheel-19.png);
-    -webkit-animation: infinite-spinning 250ms steps(6) infinite;
-    -moz-animation: infinite-spinning 250ms steps(6) infinite;
-    -o-animation: infinite-spinning 250ms steps(6) infinite;
-    animation: infinite-spinning 250ms steps(6) infinite;
+    &--45 {
+      background-image: url(assets/wheel-19.png);
+      @include prefix(animation, infinite-spinning 230ms steps(6) infinite);
+    }
+    &--50 {
+      background-image: url(assets/wheel-19.png);
+      @include prefix(animation, infinite-spinning 200ms steps(6) infinite);
+    }
+    &--55 {
+      background-image: url(assets/wheel-19.png);
+      @include prefix(animation, infinite-spinning 170ms steps(6) infinite);
+    }
+    &--60 {
+      background-image: url(assets/wheel-19.png);
+      @include prefix(animation, infinite-spinning 140ms steps(6) infinite);
+    }
+    &--65 {
+      background-image: url(assets/wheel-19.png);
+      @include prefix(animation, infinite-spinning 110ms steps(6) infinite);
+    }
+    &--70 {
+      background-image: url(assets/wheel-19.png);
+      @include prefix(animation, infinite-spinning 80ms steps(6) infinite);
+    }
   }
   &--21 {
-    background-image: url(assets/wheel-21.png);
-    -webkit-animation: infinite-spinning 480ms steps(12) infinite;
-    -moz-animation: infinite-spinning 480ms steps(12) infinite;
-    -o-animation: infinite-spinning 480ms steps(12) infinite;
-    animation: infinite-spinning 480ms steps(12) infinite;
+    &--45 {
+      background-image: url(assets/wheel-21.png);
+      @include prefix(animation, infinite-spinning 480ms steps(12) infinite);
+    }
+    &--50 {
+      background-image: url(assets/wheel-21.png);
+      @include prefix(animation, infinite-spinning 400ms steps(12) infinite);
+    }
+    &--55 {
+      background-image: url(assets/wheel-21.png);
+      @include prefix(animation, infinite-spinning 320ms steps(12) infinite);
+    }
+    &--60 {
+      background-image: url(assets/wheel-21.png);
+      @include prefix(animation, infinite-spinning 240ms steps(12) infinite);
+    }
+    &--65 {
+      background-image: url(assets/wheel-21.png);
+      @include prefix(animation, infinite-spinning 160ms steps(12) infinite);
+    }
+    &--70 {
+      background-image: url(assets/wheel-21.png);
+      @include prefix(animation, infinite-spinning 80ms steps(12) infinite);
+    }
   }
 }
 
 @keyframes infinite-spinning {
   from {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
+    @include prefix(transform, rotate(0deg));
   }
   to {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
+    @include prefix(transform, rotate(360deg));
   }
 }
 
 @-webkit-keyframes infinite-spinning {
   from {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
+    @include prefix(transform, rotate(0deg));
   }
   to {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
+    @include prefix(transform, rotate(360deg));
   }
 }

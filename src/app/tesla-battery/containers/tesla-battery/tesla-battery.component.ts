@@ -9,7 +9,7 @@ import { BatteryService } from '../../tesla-battery.service';
   template: `
     <form class="tesla-battery" [formGroup]="tesla">
       <h1>{{ title }}</h1>
-      <tesla-car [wheelsize]="tesla.get('config.wheels').value"></tesla-car>
+      <tesla-car [wheelsize]="tesla.get('config.wheels').value" [speed]="tesla.get('config.speed').value"></tesla-car>
       <tesla-stats [stats]="stats"></tesla-stats>
       <div class="tesla-controls cf" formGroupName="config">
         <tesla-counter
@@ -53,14 +53,14 @@ import { BatteryService } from '../../tesla-battery.service';
   styleUrls: ['./tesla-battery.component.scss']
 })
 export class TeslaBatteryComponent implements OnInit {
-  
+
   title: string = 'Range Per Charge';
   models: any;
   stats: Stat[];
   tesla: FormGroup;
-  
+
   private results: Array<String> = ['60', '60D', '75', '75D', '90D', 'P100D'];
-  
+
   constructor(public fb: FormBuilder, private batteryService: BatteryService) {}
 
   ngOnInit() {
