@@ -13,8 +13,8 @@ import { BatteryService } from '../../tesla-battery.service';
       <tesla-stats [stats]="stats"></tesla-stats>
       <div class="tesla-controls cf" formGroupName="config">
         <tesla-counter
-          [title]="'Speed'"
-          [unit]="'mph'"
+          title="Speed"
+          unit="mh"
           [step]="5"
           [min]="45"
           [max]="70"
@@ -22,15 +22,15 @@ import { BatteryService } from '../../tesla-battery.service';
         </tesla-counter>
         <div class="tesla-climate cf">
           <tesla-counter
-            [title]="'Outside Temperature'"
-            [unit]="'°'" 
+            title="Outside Temperature"
+            unit="°"
             [step]="10"
             [min]="-10"
             [max]="40"
             formControlName="temperature">
           </tesla-counter>
-          <tesla-climate 
-            [limit]="tesla.get('config.temperature').value > 10" 
+          <tesla-climate
+            [acHeatToggleValue]="tesla.get('config.temperature').value > 10"
             formControlName="climate">
           </tesla-climate>
         </div>
@@ -38,13 +38,13 @@ import { BatteryService } from '../../tesla-battery.service';
       </div>
       <div class="tesla-battery__notice">
         <p>
-          The actual amount of range that you experience will vary based 
-          on your particular use conditions. See how particular use conditions 
+          The actual amount of range that you experience will vary based
+          on your particular use conditions. See how particular use conditions
           may affect your range in our simulation model.
         </p>
         <p>
-          Vehicle range may vary depending on the vehicle configuration, 
-          battery age and condition, driving style and operating, environmental 
+          Vehicle range may vary depending on the vehicle configuration,
+          battery age and condition, driving style and operating, environmental
           and climate conditions.
         </p>
       </div>
