@@ -6,8 +6,8 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
   template: `
     <div class="tesla-car">
       <div class="tesla-wheels">
-        <div class="tesla-wheel tesla-wheel--front tesla-wheel--{{ wheelsize }}"></div>
-        <div class="tesla-wheel tesla-wheel--rear tesla-wheel--{{ wheelsize }}"></div>
+        <div class="tesla-wheel tesla-wheel--front tesla-wheel--{{ wheelsize }}--{{ speed }}"></div>
+        <div class="tesla-wheel tesla-wheel--rear tesla-wheel--{{ wheelsize }}--{{ speed }}"></div>
       </div>
     </div>
   `,
@@ -15,5 +15,6 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 })
 export class TeslaCarComponent {
   @Input() wheelsize: number;
+  @Input() speed: number;
   constructor() {}
 }
